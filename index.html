@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Author Portfolio</title>
+  <title>Portfólio de Autor</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +14,8 @@
     header {
       background-color: #2e4659;
       color: white;
-      padding: 60px 0;
+      padding: 60px 0 20px;
+      position: relative;
     }
     header h1 span {
       color: #d2b48c;
@@ -50,18 +51,36 @@
     footer .social-icons a:hover {
       color: #d2b48c;
     }
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .lang-switch a {
+      color: white;
+      margin-left: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .lang-switch a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header class="text-center">
+    <div class="lang-switch">
+      <a href="#" id="lang-pt" class="active">PT</a> | <a href="#" id="lang-en">EN</a>
+    </div>
     <div class="container">
       <img src="https://via.placeholder.com/200" alt="Profile" class="rounded-circle mb-4">
-      <h1>Hello, I'm <span>Your Name</span></h1>
-      <p class="lead">Author, Writer & Thought Leader</p>
+      <h1 id="header-title">Olá, eu sou <span>Seu Nome</span></h1>
+      <p class="lead" id="header-subtitle">Autor, Escritor & Pensador</p>
       <div class="d-flex justify-content-center gap-3 mt-4">
-        <a href="#" class="btn btn-custom">View My Books</a>
-        <a href="#" class="btn btn-outline-light">Read Articles</a>
+        <a href="#" id="btn-books" class="btn btn-custom">Ver meus livros</a>
+        <a href="#" id="btn-articles" class="btn btn-outline-light">Ler artigos</a>
       </div>
     </div>
   </header>
@@ -69,15 +88,15 @@
   <!-- About -->
   <section class="about-section text-center">
     <div class="container">
-      <h2 class="mb-4">About Me</h2>
-      <p class="mx-auto" style="max-width: 800px;">
-        I'm a passionate writer and author dedicated to exploring the complexities of human experience through storytelling. With several published works and countless articles, I strive to connect with readers on a deep, meaningful level.
+      <h2 class="mb-4" id="about-title">Sobre mim</h2>
+      <p class="mx-auto" style="max-width: 800px;" id="about-text1">
+        Sou um escritor apaixonado dedicado a explorar a complexidade da experiência humana através da narrativa. Com vários trabalhos publicados e inúmeros artigos, procuro conectar-me com os leitores de forma profunda e significativa.
       </p>
-      <p class="mx-auto" style="max-width: 800px;">
-        My writing spans various genres and topics, from thought-provoking fiction to insightful non-fiction. I believe in the power of words to inspire, challenge, and transform perspectives.
+      <p class="mx-auto" style="max-width: 800px;" id="about-text2">
+        A minha escrita abrange diversos géneros e temas, desde ficção envolvente até não-ficção inspiradora. Acredito no poder das palavras para inspirar, desafiar e transformar perspetivas.
       </p>
-      <p class="mx-auto" style="max-width: 800px;">
-        When I'm not writing, you can find me reading voraciously, traveling to gather new experiences, or engaging with the vibrant literary community that continues to inspire my work.
+      <p class="mx-auto" style="max-width: 800px;" id="about-text3">
+        Quando não estou a escrever, pode encontrar-me a ler avidamente, a viajar para novas experiências ou a participar na vibrante comunidade literária que continua a inspirar o meu trabalho.
       </p>
     </div>
   </section>
@@ -85,18 +104,18 @@
   <!-- Work -->
   <section class="work-section text-center">
     <div class="container">
-      <h2 class="mb-4">Explore My Work</h2>
-      <p class="mb-5">Discover my books and articles across different platforms</p>
+      <h2 class="mb-4" id="work-title">Explore o meu trabalho</h2>
+      <p class="mb-5" id="work-subtitle">Descubra os meus livros e artigos em diferentes plataformas</p>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <div class="mb-3">
-                <img src="https://via.placeholder.com/60" alt="Books">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style="height:40px;">
               </div>
-              <h5 class="card-title">My Books</h5>
-              <p class="card-text">Explore my published works available on Amazon</p>
-              <a href="#" class="btn btn-outline-dark">Visit Amazon</a>
+              <h5 class="card-title" id="card1-title">Meus Livros</h5>
+              <p class="card-text" id="card1-text">Explore os meus livros publicados disponíveis na Amazon</p>
+              <a href="#" class="btn btn-outline-dark" id="card1-btn">Visitar Amazon</a>
             </div>
           </div>
         </div>
@@ -104,11 +123,11 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <div class="mb-3">
-                <img src="https://via.placeholder.com/60" alt="Medium">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium" style="height:40px;">
               </div>
-              <h5 class="card-title">Medium Articles</h5>
-              <p class="card-text">Read my latest thoughts and insights on Medium</p>
-              <a href="#" class="btn btn-custom">Read on Medium</a>
+              <h5 class="card-title" id="card2-title">Artigos no Medium</h5>
+              <p class="card-text" id="card2-text">Leia os meus últimos pensamentos e reflexões no Medium</p>
+              <a href="#" class="btn btn-custom" id="card2-btn">Ler no Medium</a>
             </div>
           </div>
         </div>
@@ -116,11 +135,11 @@
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <div class="mb-3">
-                <img src="https://via.placeholder.com/60" alt="RLMAD">
+                <img src="https://www.rlmad.net/wp-content/uploads/medalha_mad-190x200.png" alt="RLMAD" style="height:40px;">
               </div>
-              <h5 class="card-title">RLMAD.net</h5>
-              <p class="card-text">Discover specialized articles and content on RLMAD</p>
-              <a href="#" class="btn btn-outline-dark">Visit RLMAD</a>
+              <h5 class="card-title" id="card3-title">RLMAD.net</h5>
+              <p class="card-text" id="card3-text">Descubra artigos e conteúdos especializados no RLMAD</p>
+              <a href="#" class="btn btn-outline-dark" id="card3-btn">Visitar RLMAD</a>
             </div>
           </div>
         </div>
@@ -131,8 +150,8 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2024 Your Name. All rights reserved.</p>
-      <small>Thank you for visiting my corner of the internet.</small>
+      <p id="footer-text">© 2024 Seu Nome. Todos os direitos reservados.</p>
+      <small id="footer-subtext">Obrigado por visitar o meu espaço na internet.</small>
       <div class="social-icons mt-3">
         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -140,6 +159,89 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      pt: {
+        headerTitle: "Olá, eu sou <span>Seu Nome</span>",
+        headerSubtitle: "Autor, Escritor & Pensador",
+        btnBooks: "Ver meus livros",
+        btnArticles: "Ler artigos",
+        aboutTitle: "Sobre mim",
+        aboutText1: "Sou um escritor apaixonado dedicado a explorar a complexidade da experiência humana através da narrativa. Com vários trabalhos publicados e inúmeros artigos, procuro conectar-me com os leitores de forma profunda e significativa.",
+        aboutText2: "A minha escrita abrange diversos géneros e temas, desde ficção envolvente até não-ficção inspiradora. Acredito no poder das palavras para inspirar, desafiar e transformar perspetivas.",
+        aboutText3: "Quando não estou a escrever, pode encontrar-me a ler avidamente, a viajar para novas experiências ou a participar na vibrante comunidade literária que continua a inspirar o meu trabalho.",
+        workTitle: "Explore o meu trabalho",
+        workSubtitle: "Descubra os meus livros e artigos em diferentes plataformas",
+        card1Title: "Meus Livros",
+        card1Text: "Explore os meus livros publicados disponíveis na Amazon",
+        card1Btn: "Visitar Amazon",
+        card2Title: "Artigos no Medium",
+        card2Text: "Leia os meus últimos pensamentos e reflexões no Medium",
+        card2Btn: "Ler no Medium",
+        card3Title: "RLMAD.net",
+        card3Text: "Descubra artigos e conteúdos especializados no RLMAD",
+        card3Btn: "Visitar RLMAD",
+        footerText: "© 2024 Seu Nome. Todos os direitos reservados.",
+        footerSubtext: "Obrigado por visitar o meu espaço na internet."
+      },
+      en: {
+        headerTitle: "Hello, I'm <span>Your Name</span>",
+        headerSubtitle: "Author, Writer & Thinker",
+        btnBooks: "View My Books",
+        btnArticles: "Read Articles",
+        aboutTitle: "About Me",
+        aboutText1: "I'm a passionate writer dedicated to exploring the complexity of human experience through storytelling. With several published works and numerous articles, I strive to connect with readers on a deep and meaningful level.",
+        aboutText2: "My writing spans across genres and themes, from engaging fiction to inspiring non-fiction. I believe in the power of words to inspire, challenge, and transform perspectives.",
+        aboutText3: "When I'm not writing, you can find me reading avidly, traveling for new experiences, or engaging with the vibrant literary community that continues to inspire my work.",
+        workTitle: "Explore My Work",
+        workSubtitle: "Discover my books and articles on different platforms",
+        card1Title: "My Books",
+        card1Text: "Explore my published works available on Amazon",
+        card1Btn: "Visit Amazon",
+        card2Title: "Medium Articles",
+        card2Text: "Read my latest thoughts and reflections on Medium",
+        card2Btn: "Read on Medium",
+        card3Title: "RLMAD.net",
+        card3Text: "Discover specialized articles and content on RLMAD",
+        card3Btn: "Visit RLMAD",
+        footerText: "© 2024 Your Name. All rights reserved.",
+        footerSubtext: "Thank you for visiting my corner of the internet."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("header-title").innerHTML = translations[lang].headerTitle;
+      document.getElementById("header-subtitle").innerText = translations[lang].headerSubtitle;
+      document.getElementById("btn-books").innerText = translations[lang].btnBooks;
+      document.getElementById("btn-articles").innerText = translations[lang].btnArticles;
+      document.getElementById("about-title").innerText = translations[lang].aboutTitle;
+      document.getElementById("about-text1").innerText = translations[lang].aboutText1;
+      document.getElementById("about-text2").innerText = translations[lang].aboutText2;
+      document.getElementById("about-text3").innerText = translations[lang].aboutText3;
+      document.getElementById("work-title").innerText = translations[lang].workTitle;
+      document.getElementById("work-subtitle").innerText = translations[lang].workSubtitle;
+      document.getElementById("card1-title").innerText = translations[lang].card1Title;
+      document.getElementById("card1-text").innerText = translations[lang].card1Text;
+      document.getElementById("card1-btn").innerText = translations[lang].card1Btn;
+      document.getElementById("card2-title").innerText = translations[lang].card2Title;
+      document.getElementById("card2-text").innerText = translations[lang].card2Text;
+      document.getElementById("card2-btn").innerText = translations[lang].card2Btn;
+      document.getElementById("card3-title").innerText = translations[lang].card3Title;
+      document.getElementById("card3-text").innerText = translations[lang].card3Text;
+      document.getElementById("card3-btn").innerText = translations[lang].card3Btn;
+      document.getElementById("footer-text").innerText = translations[lang].footerText;
+      document.getElementById("footer-subtext").innerText = translations[lang].footerSubtext;
+
+      document.getElementById("lang-pt").classList.toggle("active", lang === "pt");
+      document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    }
+
+    document.getElementById("lang-pt").addEventListener("click", () => setLanguage("pt"));
+    document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
+
+    setLanguage("pt");
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
