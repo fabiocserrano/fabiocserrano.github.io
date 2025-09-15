@@ -32,6 +32,9 @@
       padding: 60px 0;
       background-color: #f9f9f9;
     }
+    .about-section p {
+      text-align: justify;
+    }
     .work-section {
       padding: 60px 0;
       background-color: #f1f3f5;
@@ -90,7 +93,7 @@
     <div class="container">
       <h2 class="mb-4" id="about-title">Sobre mim</h2>
       <p class="mx-auto" style="max-width: 800px;" id="about-text1">
-        Sou informata, professor universitário, gerente de desenvolvimento e, especialmente, um entusiasta das artes liberais. Com mais de 20 anos no mercado de tecnologia e vivendo o mundo corporativo intensamente (dentro e fora das empresas), já palestrou em mais de 10 países sobre inovação, gestão de pessoas e design thinking. Sou pai de um lindo casal de filhos que querem mudar o mundo. Vivo feliz em Portugal com a minha família.
+        Sou informata, professor universitário, gerente de desenvolvimento e, especialmente, um entusiasta das artes liberais. Com mais de 20 anos no mercado de tecnologia e vivendo o mundo corporativo intensamente (dentro e fora das empresas), já palestrei em mais de 10 países sobre inovação, gestão de pessoas e design thinking. Sou pai de um lindo casal de filhos que querem mudar o mundo. Vivo feliz em Portugal com a minha família.
       </p>
       <p class="mx-auto" style="max-width: 800px;" id="about-text2">
         A minha escrita abrange diversos géneros e temas, desde ficção envolvente até não-ficção inspiradora. Acredito no poder das palavras para inspirar, desafiar e transformar perspetivas.
@@ -107,7 +110,7 @@
       <h2 class="mb-4" id="work-title">Explore o meu trabalho</h2>
       <p class="mb-5" id="work-subtitle">Descubra os meus livros e artigos em diferentes plataformas</p>
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <div class="mb-3">
@@ -119,7 +122,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <div class="mb-3">
@@ -131,7 +134,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
               <div class="mb-3">
@@ -143,6 +146,18 @@
             </div>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" style="height:40px;">
+              </div>
+              <h5 class="card-title" id="card4-title">Spotify</h5>
+              <p class="card-text" id="card4-text">Ouça as minhas playlists e composições no Spotify</p>
+              <a href="#" class="btn btn-outline-dark" id="card4-btn">Abrir Spotify</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -150,7 +165,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p id="footer-text">© 2024 Seu Nome. Todos os direitos reservados.</p>
+      <p id="footer-text">© 2024 Fábio Serrano. Todos os direitos reservados.</p>
       <small id="footer-subtext">Obrigado por visitar o meu espaço na internet.</small>
       <div class="social-icons mt-3">
         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -163,12 +178,12 @@
   <script>
     const translations = {
       pt: {
-        headerTitle: "Olá, eu sou <span>Fábio Serrano/span>",
+        headerTitle: "Olá, eu sou <span>Fábio Serrano</span>",
         headerSubtitle: "Autor, Escritor, Compositor & amante de tecnologia",
         btnBooks: "Ver meus livros",
         btnArticles: "Ler artigos",
         aboutTitle: "Sobre mim",
-        aboutText1: "Sou informata, professor universitário, gerente de desenvolvimento e, especialmente, um entusiasta das artes liberais. Com mais de 20 anos no mercado de tecnologia e vivendo o mundo corporativo intensamente (dentro e fora das empresas), já palestrou em mais de 10 países sobre inovação, gestão de pessoas e design thinking. Sou pai de um lindo casal de filhos que querem mudar o mundo. Vivo feliz em Portugal com a minha família."
+        aboutText1: "Sou informata, professor universitário, gerente de desenvolvimento e, especialmente, um entusiasta das artes liberais. Com mais de 20 anos no mercado de tecnologia e vivendo o mundo corporativo intensamente (dentro e fora das empresas), já palestrei em mais de 10 países sobre inovação, gestão de pessoas e design thinking. Sou pai de um lindo casal de filhos que querem mudar o mundo. Vivo feliz em Portugal com a minha família.",
         aboutText2: "A minha escrita abrange diversos géneros e temas, desde ficção envolvente até não-ficção inspiradora. Acredito no poder das palavras para inspirar, desafiar e transformar perspetivas.",
         aboutText3: "Quando não estou a escrever, pode encontrar-me a ler avidamente, a viajar para novas experiências ou a participar na vibrante comunidade literária que continua a inspirar o meu trabalho.",
         workTitle: "Explore o meu trabalho",
@@ -182,18 +197,21 @@
         card3Title: "RLMAD.net",
         card3Text: "Descubra artigos e conteúdos especializados no RLMAD",
         card3Btn: "Visitar RLMAD",
-        footerText: "© 2024 Seu Nome. Todos os direitos reservados.",
+        card4Title: "Spotify",
+        card4Text: "Ouça as minhas playlists e composições no Spotify",
+        card4Btn: "Abrir Spotify",
+        footerText: "© 2024 Fábio Serrano. Todos os direitos reservados.",
         footerSubtext: "Obrigado por visitar o meu espaço na internet."
       },
       en: {
-        headerTitle: "Hello, I'm <span>Your Name</span>",
-        headerSubtitle: "Author, Writer & Thinker",
+        headerTitle: "Hello, I'm <span>Fábio Serrano</span>",
+        headerSubtitle: "Author, Writer, Composer & Technology Enthusiast",
         btnBooks: "View My Books",
         btnArticles: "Read Articles",
         aboutTitle: "About Me",
-        aboutText1: "I'm a passionate writer dedicated to exploring the complexity of human experience through storytelling. With several published works and numerous articles, I strive to connect with readers on a deep and meaningful level.",
-        aboutText2: "My writing spans across genres and themes, from engaging fiction to inspiring non-fiction. I believe in the power of words to inspire, challenge, and transform perspectives.",
-        aboutText3: "When I'm not writing, you can find me reading avidly, traveling for new experiences, or engaging with the vibrant literary community that continues to inspire my work.",
+        aboutText1: "I am a computer scientist, university professor, development manager, and especially an enthusiast of the liberal arts. With more than 20 years in the technology market and living the corporate world intensely (inside and outside companies), I have lectured in more than 10 countries on innovation, people management, and design thinking. I am the father of a wonderful pair of children who want to change the world. I live happily in Portugal with my family.",
+        aboutText2: "My writing covers various genres and themes, from engaging fiction to inspiring non-fiction. I believe in the power of words to inspire, challenge, and transform perspectives.",
+        aboutText3: "When I'm not writing, you can find me avidly reading, traveling for new experiences, or engaging with the vibrant literary community that continues to inspire my work.",
         workTitle: "Explore My Work",
         workSubtitle: "Discover my books and articles on different platforms",
         card1Title: "My Books",
@@ -205,7 +223,10 @@
         card3Title: "RLMAD.net",
         card3Text: "Discover specialized articles and content on RLMAD",
         card3Btn: "Visit RLMAD",
-        footerText: "© 2024 Your Name. All rights reserved.",
+        card4Title: "Spotify",
+        card4Text: "Listen to my playlists and compositions on Spotify",
+        card4Btn: "Open Spotify",
+        footerText: "© 2024 Fábio Serrano. All rights reserved.",
         footerSubtext: "Thank you for visiting my corner of the internet."
       }
     };
@@ -230,6 +251,9 @@
       document.getElementById("card3-title").innerText = translations[lang].card3Title;
       document.getElementById("card3-text").innerText = translations[lang].card3Text;
       document.getElementById("card3-btn").innerText = translations[lang].card3Btn;
+      document.getElementById("card4-title").innerText = translations[lang].card4Title;
+      document.getElementById("card4-text").innerText = translations[lang].card4Text;
+      document.getElementById("card4-btn").innerText = translations[lang].card4Btn;
       document.getElementById("footer-text").innerText = translations[lang].footerText;
       document.getElementById("footer-subtext").innerText = translations[lang].footerSubtext;
 
