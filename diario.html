@@ -5,217 +5,364 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Diário do Aprendiz - Fábio Catarino Serrano</title>
     <meta name="description" content="Acompanhe a extraordinária jornada de Uri, um jovem inquieto em busca de propósito, na construção do Templo de Salomão.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
     
     <style>
-        /* Navbar */
-        nav {
-            background: #fff;
-            border-bottom: 1px solid #eee;
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        nav .navbar-brand img {
-            height: 32px;
-        }
-        nav .nav-link {
-            color: #333;
-            margin-right: 1rem;
-        }
-        nav .nav-link:hover {
-            text-decoration: underline;
-        }
-        nav .lang-switch a {
-            margin-left: 0.5rem;
-            text-decoration: none;
-            color: #333;
-        }
-        nav .lang-switch a.active {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        
-        /* Estilos fiéis a fabioserrano.eu */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    color: black;
-    
-}
 
-        /* Container virtual para limitar a largura do texto */
-        .content {
-            max-width: 650px;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #faf8f5;
+            font-size: 16px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 680px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Título do Livro */
-        h1 {
-            color: #f39c12; /* Cor de destaque laranja */
-            font-size: 2em;
-            font-weight: normal;
-            margin-bottom: 0.5em;
-        }
-        
-        /* Informações do Autor */
-        .author {
-            color: #999;
-            font-size: 1em;
-            margin-bottom: 30px;
+        /* Navigation */
+        .nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e3dc;
+            margin-bottom: 60px;
         }
 
-        /* Capa do Livro */
-        .book-cover {
-            max-width: 250px;
-            width: 80%;
-            height: auto;
-            margin: 20px 0 40px 0;
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Descrição do Livro (resumo) */
-        .description {
-            text-align: left; /* Alinhado à esquerda para melhor leitura */
-            color: #111;
-            font-size: 0.95em;
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-center a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-center a:hover {
+            color: #000;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-switch a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .lang-switch a.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .site-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .site-subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        /* Book Section */
+        .book-section {
+            text-align: center;
             margin-bottom: 40px;
         }
-        
-        .description p {
-            margin: 1em 0;
+
+        .book-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
-        /* Call to Action (Botão de Compra) */
+        .book-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .book-cover {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 30px 0 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: translateY(-5px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #f8f9fa;
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+
+        .cta-heading {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
         .cta-button {
             display: inline-block;
-            background-color: #f39c12;
-            color: #111;
-            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            padding: 16px 32px;
             text-decoration: none;
-            font-size: 1em;
-            font-weight: bold;
-            border-radius: 3px;
-            margin-top: 30px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
         }
 
         .cta-button:hover {
-            background-color: #e67e22;
-            transform: scale(1.05);
-        }
-
-        /* Rodapé */
-        .footer {
-            margin-top: 60px;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .footer a {
-            color: #888;
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            color: #fff;
             text-decoration: none;
         }
 
-        .footer a:hover {
-            color: #f39c12;
+        /* About Author Section */
+        .author-section {
+            margin: 80px 0 60px;
         }
-        
-        /* Media Query para ecrãs mais pequenos */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.6em;
+
+        .author-intro {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        /* Description */
+        .description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .description p {
+            margin-bottom: 24px;
+        }
+
+        .description p:first-of-type {
+            font-size: 20px;
+            font-weight: 500;
+            color: #222;
+        }
+
+        /* Features List */
+        .features-list {
+            margin: 60px 0;
+        }
+
+        .features-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 16px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: #000;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-top: 1px solid #eee;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
             }
-            .cta-button {
-                font-size: 1.1em;
-                padding: 12px 25px;
+
+            .book-title {
+                font-size: 32px;
+            }
+
+            .book-subtitle {
+                font-size: 18px;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .description {
+                font-size: 17px;
+            }
+
+            .header {
+                padding: 40px 0 30px;
             }
         }
     </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <img src="/img/logo.png" alt="Fábio Serrano">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html#about" id="menu-about">Sobre Mim</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#work" id="menu-work">Trabalho</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact" id="menu-contact">Contato</a></li>
-        </ul>
-        <div class="lang-switch">
-          <a href="#" id="lang-pt" class="active">PT</a> | <a href="#" id="lang-en">EN</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="https://fabioserrano.eu" target="_blank">
+                        <img src="/img/logo.png" alt="Fábio Serrano">
+                    </a>
+                </div>
+                <ul class="nav-center">
+                    <li><a href="/index2.html#about">Sobre Mim</a></li>
+                    <li><a href="/index2.html#work">Trabalho</a></li>
+                    <li><a href="/index2.html#contact">Contato</a></li>
+                </ul>
+                <div class="lang-switch">
+                    <a href="#" class="active">PT</a>
+                    <span>|</span>
+                    <a href="#">EN</a>
+                </div>
+            </div>
+        </nav>
 
-    <div class="content">
+        <!-- Book Section -->
+        <section class="book-section">
+            <h1 class="book-title">O Diário do Aprendiz</h1>
+            <p class="book-subtitle">Uma Jornada Simbólica no Templo de Salomão</p>
+            
+            <a href="https://www.amazon.com.br/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Portuguese/dp/B0FKP5BD6Q" target="_blank" rel="noopener noreferrer">
+                <img src="https://m.media-amazon.com/images/I/71m6I1hnJXL._SL1491_.jpg" alt="Capa do livro O Diário do Aprendiz" class="book-cover">
+            </a>
+        </section>
 
-        <header>
-            <h1>O Diário do Aprendiz</h1>
-            <p class="author">Uma Jornada Simbólica no Templo de Salomão<br>por Fábio Catarino Serrano</p>
-        </header>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-heading">Disponível agora na Amazon</h2>
+            <a href="https://www.amazon.es/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Salom%C3%A3o/dp/B0D9W3CVY2/" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Comprar na Amazon.es
+            </a>
+            <br><br>
+            <a href="https://www.amazon.com.br/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Portuguese/dp/B0FKP5BD6Q" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Comprar na Amazon.com.br
+            </a>
+        </section>
 
-        <a href="https://www.amazon.com.br/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Portuguese/dp/B0FKP5BD6Q" target="_blank" rel="noopener noreferrer">
-            <img src="https://m.media-amazon.com/images/I/71m6I1hnJXL._SL1491_.jpg" alt="Capa do livro O Diário do Aprendiz" class="book-cover">
-        </a>
+        <!-- Author Section -->
+        <section class="author-section">
+            <h2 class="author-intro">Uma parábola atemporal sobre autoconhecimento e sabedoria</h2>
+        </section>
 
-        <a href="https://www.amazon.es/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Salom%C3%A3o/dp/B0D9W3CVY2/" target="_blank" rel="noopener noreferrer" class="cta-button">
-            Comprar na Amazon.es
-        </a>
-
-        <div class="description">
+        <!-- Description -->
+        <section class="description">
             <p>Em "O Diário do Aprendiz", acompanhe a extraordinária jornada de Uri, um jovem inquieto em busca de propósito, que decide deixar a rotina de Jerusalém para se juntar à mais grandiosa obra de seu tempo: a construção do Templo de Salomão.</p>
+            
             <p>Aceito como Aprendiz, Uri mergulha em um universo de trabalho árduo, disciplina e descobertas surpreendentes. Através das suas anotações pessoais, o leitor é convidado a testemunhar não apenas a monumental edificação física do Templo — desde o silêncio reverente do canteiro, onde cada pedra era talhada longe dos martelos, até a coordenação de milhares de homens em uma "colmeia" de esforço coletivo, mas também a construção de um homem.</p>
+            
             <p>Guidado por um Mestre sábio, Uri aprende que as ferramentas e processos da construção guardam profundos significados.</p>
+        </section>
+
+        <!-- Features -->
+        <section class="features-list">
+            <ul>
+                <li><strong>Uma narrativa envolvente</strong> que combina história e simbolismo de forma única</li>
+                <li><strong>Lições profundas</strong> sobre ética, moralidade e crescimento pessoal</li>
+                <li><strong>Uma jornada de autodescoberta</strong> através da construção do Templo de Salomão</li>
+                <li><strong>Ensinamentos atemporais</strong> sobre a busca pela sabedoria e perfeição</li>
+            </ul>
+        </section>
+
+        <section class="description">
             <p>"Os Diários do Aprendiz" é mais do que uma história sobre um templo. É uma parábola atemporal sobre autoconhecimento, ética, moralidade e a busca incessante por sabedoria e perfeição, convidando o leitor a desbastar sua própria "pedra bruta" e a encontrar o propósito em sua própria Grande Obra.</p>
-        </div>
-        
+        </section>
+
+        <!-- Footer -->
         <footer class="footer">
             <p>&copy; 2025 | <a href="https://www.fabioserrano.eu/index2.html" target="_blank" rel="noopener noreferrer">Fábio Serrano - Site do Autor</a></p>
         </footer>
-
     </div>
-
-  <!-- Scripts -->
-  <script>
-    const translations = {
-      pt: {
-        menuAbout: "Sobre Mim",
-        menuWork: "Trabalho",
-        menuContact: "Contato"
-      },
-      en: {
-        menuAbout: "About Me",
-        menuWork: "Work",
-        menuContact: "Contact"
-      }
-    };
-
-    function setLanguage(lang) {
-      document.getElementById("menu-about").innerText = translations[lang].menuAbout;
-      document.getElementById("menu-work").innerText = translations[lang].menuWork;
-      document.getElementById("menu-contact").innerText = translations[lang].menuContact;
-
-      document.getElementById("lang-pt").classList.toggle("active", lang === "pt");
-      document.getElementById("lang-en").classList.toggle("active", lang === "en");
-    }
-
-    document.getElementById("lang-pt").addEventListener("click", (e) => { e.preventDefault(); setLanguage("pt"); });
-    document.getElementById("lang-en").addEventListener("click", (e) => { e.preventDefault(); setLanguage("en"); });
-
-    setLanguage("pt");
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
