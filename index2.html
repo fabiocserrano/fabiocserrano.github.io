@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fábio Serrano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #faf8f5;
+      font-size: 16px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    .nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #e8e3dc;
+      margin-bottom: 60px;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-center a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-center a:hover {
+      color: #000;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .lang-switch a {
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .lang-switch a.active {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .header-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-subtitle {
+      font-size: 20px;
+      color: #666;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .header-tagline {
+      font-size: 18px;
+      color: #444;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    /* About Section */
+    .about-text {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .about-text:first-of-type {
+      font-size: 24px;
+      font-weight: 600;
+      color: #000;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Work Section */
+    .work-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .work-card {
+      display: flex;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid #e8e3dc;
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      background: #fff;
+    }
+
+    .work-card:hover {
+      border-color: #d4cfc4;
+      box-shadow: 0 8px 25px rgba(139, 125, 95, 0.15);
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .work-card img {
+      width: 48px;
+      height: 48px;
+      margin-right: 20px;
+      object-fit: contain;
+    }
+
+    .work-card-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 4px;
+    }
+
+    .work-card-content p {
+      font-size: 15px;
+      color: #666;
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: #f4f1eb;
+      padding: 60px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 80px 0;
+    }
+
+    .cta-heading {
+      font-size: 28px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    .cta-text {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 60px 0 40px;
+      border-top: 1px solid #e8e3dc;
+      margin-top: 80px;
+    }
+
+    .footer-text {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: #666;
+      font-size: 20px;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #000;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links {
+        gap: 1.5rem;
+      }
+
+      .header-title {
+        font-size: 36px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .work-card {
+        padding: 20px;
+      }
+
+      .work-card img {
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+      }
+
+      .cta-section {
+        padding: 40px 24px;
+      }
+    }
+
+    /* Mobile Navigation */
+    @media (max-width: 480px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      
+      .work-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 16px;
+      }
+      
+      .work-card img {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-content">
+        <div class="nav-logo">
+          <img src="/img/logo.png" alt="Fábio Serrano">
+        </div>
+        <ul class="nav-center">
+          <li><a href="#about" id="menu-about">Sobre Mim</a></li>
+          <li><a href="#work" id="menu-work">Trabalho</a></li>
+          <li><a href="#contact" id="menu-contact">Contato</a></li>
+        </ul>
+        <div class="lang-switch">
+          <a href="#" id="lang-pt" class="active">PT</a>
+          <span>|</span>
+          <a href="#" id="lang-en">EN</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+      <img src="/img/profile.jpg" alt="Foto de Fábio Serrano" class="profile-img">
+      <h1 class="header-title" id="header-title">Fábio Serrano</h1>
+      <h2 class="header-subtitle" id="header-subtitle">Autor & Compositor</h2>
+      <p class="header-tagline" id="header-tagline">Escrevo histórias e músicas que unem tecnologia, arte e humanidade.</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h3 class="section-title" id="about-title">Sobre mim</h3>
+      <p class="about-text" id="about-text1"></p>
+      <p class="about-text" id="about-text2"></p>
+      <p class="about-text" id="about-text3"></p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2 class="cta-heading" id="work-title">Mergulhe no meu universo criativo</h2>
+      <p class="cta-text">Explore os diferentes espaços onde partilho as minhas criações e reflexões.</p>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="section">
+      <div class="work-grid">
+        <a href="https://www.amazon.com.br/-/pt/stores/author/B0FKS4N675" target="_blank" class="work-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+          <div class="work-card-content">
+            <h4 id="card1-title">Amazon</h4>
+            <p id="card1-text">Histórias que desafiam, inspiram e viajam com você.</p>
+          </div>
+        </a>
+
+        <a href="https://medium.com/@fcatser" target="_blank" class="work-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium">
+          <div class="work-card-content">
+            <h4 id="card2-title">Medium</h4>
+            <p id="card2-text">Reflexões sobre tecnologia, humanidade e o que nos move.</p>
+          </div>
+        </a>
+
+        <a href="https://a-partir-pedra.blogspot.com/" target="_blank" class="work-card">
+          <img src="https://www.rlmad.net/wp-content/uploads/medalha_mad-190x200.png" alt="A Partir Pedra">
+          <div class="work-card-content">
+            <h4 id="card3-title">A Partir Pedra</h4>
+            <p id="card3-text">Um espaço de reflexão maçónica, cultural e humana.</p>
+          </div>
+        </a>
+
+        <a href="https://open.spotify.com/artist/5hpGkWzL3n10jYNr3YM7Cl" target="_blank" class="work-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
+          <div class="work-card-content">
+            <h4 id="card4-title">Spotify</h4>
+            <p id="card4-text">Composições e playlists para transformar ideias em som.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <p class="footer-text" id="footer-text">© 2025 Fábio Serrano. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">⚡</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const translations = {
+      pt: {
+        menuAbout: "Sobre Mim",
+        menuWork: "Trabalho",
+        menuContact: "Contato",
+        headerTitle: "Fábio Serrano",
+        headerSubtitle: "Autor & Compositor",
+        headerTagline: "Escrevo histórias e músicas que unem tecnologia, arte e humanidade.",
+        aboutTitle: "Sobre mim",
+        aboutText1: "Acredito no poder das palavras e da música para transformar perspectivas.",
+        aboutText2: "Ao longo de mais de 20 anos na tecnologia e no ensino, vivi intensamente o mundo corporativo, mas sempre com um olhar para além dele — para a arte, a filosofia e a criação. Essa mistura guia a minha escrita, que atravessa géneros e temas: da ficção envolvente à não-ficção inspiradora, sempre em busca de provocar reflexão e despertar emoções.",
+        aboutText3: "Quando não estou a escrever, estou a compor, a viajar em busca de novas experiências ou a partilhar ideias que ajudam a construir sentido.",
+        workTitle: "Mergulhe no meu universo criativo",
+        card1Title: "Amazon",
+        card1Text: "Histórias que desafiam, inspiram e viajam com você.",
+        card2Title: "Medium",
+        card2Text: "Reflexões sobre tecnologia, humanidade e o que nos move.",
+        card3Title: "A Partir Pedra",
+        card3Text: "Um espaço de reflexão maçónica, cultural e humana.",
+        card4Title: "Spotify",
+        card4Text: "Composições e playlists para transformar ideias em som.",
+        footerText: "© 2025 Fábio Serrano. Todos os direitos reservados."
+      },
+      en: {
+        menuAbout: "About Me",
+        menuWork: "Work",
+        menuContact: "Contact",
+        headerTitle: "Fábio Serrano",
+        headerSubtitle: "Author & Composer",
+        headerTagline: "I write stories and music that bridge technology, art, and humanity.",
+        aboutTitle: "About Me",
+        aboutText1: "I believe in the power of words and music to transform perspectives.",
+        aboutText2: "For more than 20 years in technology and academia, I have lived the corporate world intensely, but always with an eye beyond it — toward art, philosophy, and creation. This blend guides my writing, which spans genres and themes: from immersive fiction to inspiring non-fiction, always seeking to spark reflection and awaken emotions.",
+        aboutText3: "When I am not writing, I am composing, traveling for new experiences, or sharing ideas that help build meaning.",
+        workTitle: "Dive into my creative universe",
+        card1Title: "Amazon",
+        card1Text: "Stories that challenge, inspire, and travel with you.",
+        card2Title: "Medium",
+        card2Text: "Reflections on technology, humanity, and what drives us.",
+        card3Title: "A Partir Pedra",
+        card3Text: "A space for Masonic, cultural, and human reflection.",
+        card4Title: "Spotify",
+        card4Text: "Compositions and playlists that turn ideas into sound.",
+        footerText: "© 2025 Fábio Serrano. All rights reserved."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("menu-about").innerText = translations[lang].menuAbout;
+      document.getElementById("menu-work").innerText = translations[lang].menuWork;
+      document.getElementById("menu-contact").innerText = translations[lang].menuContact;
+      document.getElementById("header-title").innerText = translations[lang].headerTitle;
+      document.getElementById("header-subtitle").innerText = translations[lang].headerSubtitle;
+      document.getElementById("header-tagline").innerText = translations[lang].headerTagline;
+      document.getElementById("about-title").innerText = translations[lang].aboutTitle;
+      document.getElementById("about-text1").innerText = translations[lang].aboutText1;
+      document.getElementById("about-text2").innerText = translations[lang].aboutText2;
+      document.getElementById("about-text3").innerText = translations[lang].aboutText3;
+      document.getElementById("work-title").innerText = translations[lang].workTitle;
+      document.getElementById("card1-title").innerText = translations[lang].card1Title;
+      document.getElementById("card1-text").innerText = translations[lang].card1Text;
+      document.getElementById("card2-title").innerText = translations[lang].card2Title;
+      document.getElementById("card2-text").innerText = translations[lang].card2Text;
+      document.getElementById("card3-title").innerText = translations[lang].card3Title;
+      document.getElementById("card3-text").innerText = translations[lang].card3Text;
+      document.getElementById("card4-title").innerText = translations[lang].card4Title;
+      document.getElementById("card4-text").innerText = translations[lang].card4Text;
+      document.getElementById("footer-text").innerText = translations[lang].footerText;
+
+      document.getElementById("lang-pt").classList.toggle("active", lang === "pt");
+      document.getElementById("lang-en").classList.toggle("active", lang === "en");
+    }
+
+    document.getElementById("lang-pt").addEventListener("click", (e) => { e.preventDefault(); setLanguage("pt"); });
+    document.getElementById("lang-en").addEventListener("click", (e) => { e.preventDefault(); setLanguage("en"); });
+
+    setLanguage("pt");
+  </script>
+</body>
+</html>
