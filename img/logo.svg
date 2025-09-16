@@ -1,11 +1,7 @@
-<!-- img/logo.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="40" viewBox="0 0 180 40" role="img" aria-label="Fábio Serrano logo">
   <title>Fábio Serrano</title>
-  <!-- placeholder square mark -->
   <rect x="0" y="0" width="40" height="40" rx="6" ry="6" fill="none" stroke="#111" stroke-width="2"/>
-  <!-- FS monogram -->
   <text x="20" y="27" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial" font-weight="700" font-size="18" text-anchor="middle" fill="#111">FS</text>
-  <!-- name to the right -->
   <text x="70" y="24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial" font-weight="700" font-size="16" fill="#111">Fábio Serrano</text>
   <text x="70" y="36" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial" font-weight="400" font-size="11" fill="#555">Autor & Compositor</text>
-</svg> 
+</svg>
