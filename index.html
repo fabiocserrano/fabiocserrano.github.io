@@ -3,85 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fábio Serrano</title>
-  <link rel="stylesheet" href="css/new-style.css">
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <title>Portfólio de Autor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      background-color: #2e4659;
+      color: white;
+      padding: 60px 0 20px;
+      position: relative;
+    }
+    header h1 span {
+      color: #d2b48c;
+    }
+    .btn-custom {
+      background-color: #d2b48c;
+      color: #2e4659;
+    }
+    .btn-custom:hover {
+      background-color: #c0a070;
+      color: white;
+    }
+    .about-section {
+      padding: 60px 0;
+      background-color: #f9f9f9;
+    }
+    .about-section p {
+      text-align: justify;
+    }
+    .work-section {
+      padding: 60px 0;
+      background-color: #f1f3f5;
+    }
+    footer {
+      background-color: #2e4659;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    footer .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #d2b48c;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .lang-switch a {
+      color: white;
+      margin-left: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .lang-switch a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <!-- Header -->
+  <header class="text-center">
+    <div class="lang-switch">
+      <a href="#" id="lang-pt" class="active">PT</a> | <a href="#" id="lang-en">EN</a>
+    </div>
     <div class="container">
-      <div class="logo">
-        <a href="/">Fábio Serrano</a>
-      </div>
-      <nav class="site-nav">
-        <ul>
-          <li><a href="#about" id="menu-about">Sobre Mim</a></li>
-          <li><a href="#work" id="menu-work">Trabalho</a></li>
-          <li><a href="#contact" id="menu-contact">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="lang-switch">
-        <a href="#" id="lang-pt" class="active">PT</a> | <a href="#" id="lang-en">EN</a>
-      </div>
+      <img src="/img/profile.jpg" alt="Profile" class="rounded-circle mb-4">
+      <h1 id="header-title">Escrevo histórias e músicas que unem tecnologia, arte e humanidade.</h1>
+      <p class="lead" id="header-subtitle"></p>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1 id="header-title">Fábio Serrano</h1>
-      <p id="header-subtitle" class="subtitle">Autor & Compositor</p>
-      <p id="header-tagline">Escrevo histórias e músicas que unem tecnologia, arte e humanidade.</p>
-    </section>
-
-    <section id="about">
-      <h2 id="about-title">Sobre mim</h2>
-      <p id="about-text1"></p>
-      <p id="about-text2"></p>
-      <p id="about-text3"></p>
-    </section>
-
-    <section id="work">
-      <h2 id="work-title">Mergulhe no meu universo criativo</h2>
-      <div class="links-list">
-        <a href="https://www.amazon.com.br/-/pt/stores/author/B0FKS4N675" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
-          <div>
-            <strong id="card1-title">Amazon</strong><br>
-            <span id="card1-text">Histórias que desafiam, inspiram e viajam com você.</span>
-          </div>
-        </a>
-        <a href="https://medium.com/@fcatser" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium">
-          <div>
-            <strong id="card2-title">Medium</strong><br>
-            <span id="card2-text">Reflexões sobre tecnologia, humanidade e o que nos move.</span>
-          </div>
-        </a>
-        <a href="https://a-partir-pedra.blogspot.com/" target="_blank">
-          <img src="https://www.rlmad.net/wp-content/uploads/medalha_mad-190x200.png" alt="A Partir Pedra">
-          <div>
-            <strong id="card3-title">A Partir Pedra</strong><br>
-            <span id="card3-text">Um espaço de reflexão maçónica, cultural e humana.</span>
-          </div>
-        </a>
-        <a href="https://open.spotify.com/artist/5hpGkWzL3n10jYNr3YM7Cl" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
-          <div>
-            <strong id="card4-title">Spotify</strong><br>
-            <span id="card4-text">Composições e playlists para transformar ideias em som.</span>
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact" class="site-footer">
+  <!-- About -->
+  <section class="about-section text-center">
     <div class="container">
-      <p id="footer-text">© 2025 Fábio Serrano. Todos os direitos reservados.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+      <h2 class="mb-4" id="about-title">Sobre mim</h2>
+      <p class="mx-auto" style="max-width: 800px;" id="about-text1"></p>
+      <p class="mx-auto" style="max-width: 800px;" id="about-text2"></p>
+      <p class="mx-auto" style="max-width: 800px;" id="about-text3"></p>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="work-section text-center">
+    <div class="container">
+      <h2 class="mb-4" id="work-title">Mergulhe no meu universo criativo</h2>
+      <p class="mb-5" id="work-subtitle">Onde minhas palavras e músicas ganham vida</p>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style="height:40px;">
+              </div>
+              <h5 class="card-title" id="card1-title">Meus Livros</h5>
+              <p class="card-text" id="card1-text">Histórias que desafiam, inspiram e viajam com você.</p>
+              <a href="https://www.amazon.com.br/-/pt/stores/author/B0FKS4N675" target="_blank" class="btn btn-outline-dark" id="card1-btn">Visitar Amazon</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium" style="height:40px;">
+              </div>
+              <h5 class="card-title" id="card2-title">Artigos no Medium</h5>
+              <p class="card-text" id="card2-text">Reflexões sobre tecnologia, humanidade e o que nos move.</p>
+              <a href="https://medium.com/@fcatser" target="_blank" class="btn btn-custom" id="card2-btn">Ler no Medium</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="mb-3">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQ0GgD2uVQkJXoJYVvE9C5Ck3k5aElhT2P3hMpt9gT4mvTxzqAqqXDF6dvzSxR45V1CwYdD3zYpzzrL5aqQK0W1czH6ZgGVcQjghRG9z5jVepOy6Se7O5yKf4PO1V2U2b4H31avJEX9bK_/s200/favicon.ico" alt="A Partir Pedra" style="height:40px;">
+              </div>
+              <h5 class="card-title" id="card3-title">A Partir Pedra</h5>
+              <p class="card-text" id="card3-text">Um espaço de reflexão maçónica, cultural e humana.</p>
+              <a href="https://a-partir-pedra.blogspot.com/" target="_blank" class="btn btn-outline-dark" id="card3-btn">Visitar Blog</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" style="height:40px;">
+              </div>
+              <h5 class="card-title" id="card4-title">Spotify</h5>
+              <p class="card-text" id="card4-text">Composições e playlists para transformar ideias em som.</p>
+              <a href="https://open.spotify.com/artist/5hpGkWzL3n10jYNr3YM7Cl" target="_blank" class="btn btn-outline-dark" id="card4-btn">Abrir Spotify</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p id="footer-text">© 2024 Fábio Serrano. Todos os direitos reservados.</p>
+      <small id="footer-subtext">Obrigado por visitar o meu espaço na internet.</small>
+      <div class="social-icons mt-3">
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </footer>
@@ -89,81 +168,89 @@
   <script>
     const translations = {
       pt: {
-        menuAbout: "Sobre Mim",
-        menuWork: "Trabalho",
-        menuContact: "Contato",
-        headerTitle: "Fábio Serrano",
-        headerSubtitle: "Autor & Compositor",
-        headerTagline: "Escrevo histórias e músicas que unem tecnologia, arte e humanidade.",
+        headerTitle: "Escrevo histórias e músicas que unem tecnologia, arte e humanidade.",
+        headerSubtitle: "",
         aboutTitle: "Sobre mim",
         aboutText1: "Acredito no poder das palavras e da música para transformar perspectivas.",
         aboutText2: "Ao longo de mais de 20 anos na tecnologia e no ensino, vivi intensamente o mundo corporativo, mas sempre com um olhar para além dele — para a arte, a filosofia e a criação. Essa mistura guia a minha escrita, que atravessa géneros e temas: da ficção envolvente à não-ficção inspiradora, sempre em busca de provocar reflexão e despertar emoções.",
         aboutText3: "Quando não estou a escrever, estou a compor, a viajar em busca de novas experiências ou a partilhar ideias que ajudam a construir sentido.",
         workTitle: "Mergulhe no meu universo criativo",
-        card1Title: "Amazon",
+        workSubtitle: "Onde minhas palavras e músicas ganham vida",
+        card1Title: "Meus Livros",
         card1Text: "Histórias que desafiam, inspiram e viajam com você.",
-        card2Title: "Medium",
+        card1Btn: "Visitar Amazon",
+        card2Title: "Artigos no Medium",
         card2Text: "Reflexões sobre tecnologia, humanidade e o que nos move.",
+        card2Btn: "Ler no Medium",
         card3Title: "A Partir Pedra",
         card3Text: "Um espaço de reflexão maçónica, cultural e humana.",
+        card3Btn: "Visitar Blog",
         card4Title: "Spotify",
         card4Text: "Composições e playlists para transformar ideias em som.",
-        footerText: "© 2025 Fábio Serrano. Todos os direitos reservados."
+        card4Btn: "Abrir Spotify",
+        footerText: "© 2024 Fábio Serrano. Todos os direitos reservados.",
+        footerSubtext: "Obrigado por visitar o meu espaço na internet."
       },
       en: {
-        menuAbout: "About Me",
-        menuWork: "Work",
-        menuContact: "Contact",
-        headerTitle: "Fábio Serrano",
-        headerSubtitle: "Author & Composer",
-        headerTagline: "I write stories and music that bridge technology, art, and humanity.",
+        headerTitle: "I write stories and music that bridge technology, art, and humanity.",
+        headerSubtitle: "",
         aboutTitle: "About Me",
         aboutText1: "I believe in the power of words and music to transform perspectives.",
         aboutText2: "For more than 20 years in technology and academia, I have lived the corporate world intensely, but always with an eye beyond it — toward art, philosophy, and creation. This blend guides my writing, which spans genres and themes: from immersive fiction to inspiring non-fiction, always seeking to spark reflection and awaken emotions.",
         aboutText3: "When I am not writing, I am composing, traveling for new experiences, or sharing ideas that help build meaning.",
         workTitle: "Dive into my creative universe",
-        card1Title: "Amazon",
+        workSubtitle: "Where my words and music come to life",
+        card1Title: "My Books",
         card1Text: "Stories that challenge, inspire, and travel with you.",
-        card2Title: "Medium",
+        card1Btn: "Visit Amazon",
+        card2Title: "Medium Articles",
         card2Text: "Reflections on technology, humanity, and what drives us.",
+        card2Btn: "Read on Medium",
         card3Title: "A Partir Pedra",
         card3Text: "A space for Masonic, cultural, and human reflection.",
+        card3Btn: "Visit Blog",
         card4Title: "Spotify",
         card4Text: "Compositions and playlists that turn ideas into sound.",
-        footerText: "© 2025 Fábio Serrano. All rights reserved."
+        card4Btn: "Open Spotify",
+        footerText: "© 2024 Fábio Serrano. All rights reserved.",
+        footerSubtext: "Thank you for visiting my corner of the internet."
       }
     };
 
     function setLanguage(lang) {
-      document.getElementById("menu-about").innerText = translations[lang].menuAbout;
-      document.getElementById("menu-work").innerText = translations[lang].menuWork;
-      document.getElementById("menu-contact").innerText = translations[lang].menuContact;
-      document.getElementById("header-title").innerText = translations[lang].headerTitle;
+      document.getElementById("header-title").innerHTML = translations[lang].headerTitle;
       document.getElementById("header-subtitle").innerText = translations[lang].headerSubtitle;
-      document.getElementById("header-tagline").innerText = translations[lang].headerTagline;
       document.getElementById("about-title").innerText = translations[lang].aboutTitle;
       document.getElementById("about-text1").innerText = translations[lang].aboutText1;
       document.getElementById("about-text2").innerText = translations[lang].aboutText2;
       document.getElementById("about-text3").innerText = translations[lang].aboutText3;
       document.getElementById("work-title").innerText = translations[lang].workTitle;
+      document.getElementById("work-subtitle").innerText = translations[lang].workSubtitle;
       document.getElementById("card1-title").innerText = translations[lang].card1Title;
       document.getElementById("card1-text").innerText = translations[lang].card1Text;
+      document.getElementById("card1-btn").innerText = translations[lang].card1Btn;
       document.getElementById("card2-title").innerText = translations[lang].card2Title;
       document.getElementById("card2-text").innerText = translations[lang].card2Text;
+      document.getElementById("card2-btn").innerText = translations[lang].card2Btn;
       document.getElementById("card3-title").innerText = translations[lang].card3Title;
       document.getElementById("card3-text").innerText = translations[lang].card3Text;
+      document.getElementById("card3-btn").innerText = translations[lang].card3Btn;
       document.getElementById("card4-title").innerText = translations[lang].card4Title;
       document.getElementById("card4-text").innerText = translations[lang].card4Text;
+      document.getElementById("card4-btn").innerText = translations[lang].card4Btn;
       document.getElementById("footer-text").innerText = translations[lang].footerText;
+      document.getElementById("footer-subtext").innerText = translations[lang].footerSubtext;
 
       document.getElementById("lang-pt").classList.toggle("active", lang === "pt");
       document.getElementById("lang-en").classList.toggle("active", lang === "en");
     }
 
-    document.getElementById("lang-pt").addEventListener("click", (e) => { e.preventDefault(); setLanguage("pt"); });
-    document.getElementById("lang-en").addEventListener("click", (e) => { e.preventDefault(); setLanguage("en"); });
+    document.getElementById("lang-pt").addEventListener("click", () => setLanguage("pt"));
+    document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
 
     setLanguage("pt");
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
