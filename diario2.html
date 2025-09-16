@@ -20,7 +20,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #fff;
+            background: #faf8f5;
             font-size: 16px;
         }
 
@@ -29,6 +29,58 @@
             max-width: 680px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #e8e3dc;
+            margin-bottom: 60px;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-center a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-center a:hover {
+            color: #000;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-switch a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .lang-switch a.active {
+            color: #000;
+            font-weight: 600;
         }
 
         /* Header */
@@ -49,20 +101,20 @@
             font-size: 18px;
             color: #666;
             font-weight: 400;
-            margin-bottom: 60px;
+            margin-bottom: 10px;
         }
 
         /* Book Section */
         .book-section {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .book-title {
             font-size: 42px;
             font-weight: 700;
             color: #000;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             line-height: 1.2;
             letter-spacing: -0.02em;
         }
@@ -70,7 +122,7 @@
         .book-subtitle {
             font-size: 20px;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             font-weight: 400;
         }
 
@@ -78,7 +130,7 @@
             max-width: 300px;
             width: 100%;
             height: auto;
-            margin: 40px 0;
+            margin: 30px 0 10px 0;
             border-radius: 8px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
@@ -91,10 +143,10 @@
         /* CTA Section */
         .cta-section {
             background: #f8f9fa;
-            padding: 60px 40px;
+            padding: 50px 40px;
             border-radius: 12px;
             text-align: center;
-            margin: 60px 0;
+            margin: 10px 0 20px 0;
         }
 
         .cta-heading {
@@ -236,11 +288,24 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1 class="site-title">Fábio Catarino Serrano</h1>
-            <p class="site-subtitle">Autor • Escritor • Pesquisador</p>
-        </header>
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <img src="/img/logo.png" alt="Fábio Serrano">
+                </div>
+                <ul class="nav-center">
+                    <li><a href="/index2.html#about">Sobre Mim</a></li>
+                    <li><a href="/index2.html#work">Trabalho</a></li>
+                    <li><a href="/index2.html#contact">Contato</a></li>
+                </ul>
+                <div class="lang-switch">
+                    <a href="#" class="active">PT</a>
+                    <span>|</span>
+                    <a href="#">EN</a>
+                </div>
+            </div>
+        </nav>
 
         <!-- Book Section -->
         <section class="book-section">
@@ -257,6 +322,10 @@
             <h2 class="cta-heading">Disponível agora na Amazon</h2>
             <a href="https://www.amazon.es/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Salom%C3%A3o/dp/B0D9W3CVY2/" target="_blank" rel="noopener noreferrer" class="cta-button">
                 Comprar na Amazon.es
+            </a>
+            <br><br>
+            <a href="https://www.amazon.com.br/Di%C3%A1rio-Aprendiz-Jornada-Simb%C3%B3lica-Portuguese/dp/B0FKP5BD6Q" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Comprar na Amazon.com.br
             </a>
         </section>
 
